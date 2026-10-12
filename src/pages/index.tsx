@@ -106,11 +106,12 @@ const PortFolioPaper = () => {
         </Display>
         <span>
           <br />
-          <h4>Kittapard Puime</h4>
+          <h4>Kittapard Puaime</h4>
           <h6>
-            Very interesting in UX/UI to be the best Front-end Developer
+            Senior Fullstack Developer with hands-on experience in Rust
+            microservices and React/TypeScript frontends,
             <br />
-            and experience in backend developer
+            focused on developer experience, security, and delivery quality.
           </h6>
         </span>
       </ProfileHeader>
@@ -173,7 +174,7 @@ const PortFolioPaper = () => {
             {skillsData.map((skill) => (
               <Fragment>
                 <p>
-                  <b>{skill.name}</b> {skill.level}
+                  <b>{skill.name}</b>
                 </p>
                 <TagGroup>
                   {skill.items.map((item) => (
@@ -186,7 +187,7 @@ const PortFolioPaper = () => {
 
           <ProfileSection>
             <h5>
-              <i>INTEREST</i>
+              <i>INTERESTS</i>
             </h5>
 
             {interesData.map((interest) => (
@@ -204,7 +205,7 @@ const PortFolioPaper = () => {
           </ProfileSection>
           <ProfileSection>
             <h5>
-              <i>CONTRACT</i>
+              <i>CONTACT</i>
             </h5>
             {profileData.contract.map((item) => (
               <div className="label">

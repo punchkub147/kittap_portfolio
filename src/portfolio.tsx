@@ -1,4 +1,3 @@
-import { action, thunk } from "easy-peasy";
 import {
   faBirthdayCake,
   faMapMarkerAlt,
@@ -14,11 +13,11 @@ export default {
     contract: [
       {
         icon: faMapMarkerAlt,
-        text: "91/84 pruksa villa lumlooka Rd. klong 7 Khwaeng lumlooka Khet lumlooka Pathumthani 12150",
+        text: "91/84 Pruksa Villa, Lam Luk Ka Rd. (Khlong 7), Lam Luk Ka, Pathum Thani 12150, Thailand",
       },
       {
         icon: faBirthdayCake,
-        text: `${moment().diff(moment("30/03/1996", "DD/MM/YYYY"), "year")} yo`,
+        text: `${moment().diff(moment("30/03/1996", "DD/MM/YYYY"), "year")} years old`,
       },
       {
         icon: faEnvelope,
@@ -41,7 +40,7 @@ export default {
       },
       {
         icon: faLinkedin,
-        text: "Linkedin",
+        text: "LinkedIn",
         link: "https://www.linkedin.com/in/kittapard-puaime-6553b4146/",
       },
     ],
@@ -49,54 +48,29 @@ export default {
   skillsData: [
     {
       name: "Frontend",
-      items: ["Typescript", "NextJS", "Tanstack", "Zod", "Jotai", "Playwright"],
-      // items: ["Typescript", "React&Redux", "Storybook", "Selenium"],
+      items: ["TypeScript", "NextJS", "TanStack", "Zod", "Jotai", "Playwright"],
     },
-    // {
-    //   name: "Frontend",
-    //   level: "Learning",
-    //   items: ["NextJS", "Testing Lib"],
-    // },
     {
       name: "Backend",
-      // items: [
-      //   "NodeJS",
-      //   "Koa",
-      //   "MySQL",
-      //   "Sequelize",
-      //   "Socket",
-      //   "Redis",
-      //   "Docker",
-      //   "Nginx",
-      // ],
-      items: ["Rust", "Axum", "Tokio", "sqlx", "Redis", "Kafka", "AWS (RDS, S3, ECR, ETC.)"],
+      items: ["Rust", "Axum", "Tokio", "sqlx", "Redis", "Kafka", "AWS (RDS, S3, ECR, etc.)"],
     },
     {
-      name: "AI Skills & Tools",
-      items: ["OMP (Pi Harness)", "Hermes agent", "Superpowers"],
+      name: "AI Engineering",
+      items: ["OMP (Pi Harness)", "Hermes Agent", "Superpowers"],
     },
-    // {
-    //   name: "Backend",
-    //   level: "Learning",
-    //   items: ["AWS (RDS, S3, ECR, EC2)"],
-    // },
     {
       name: "DevOps",
-      items: ["Docker", "Gitlab CI/CD", "Terraform IaC", "ArgoCD", "K8S"],
+      items: ["Docker", "GitLab CI/CD", "Terraform (IaC)", "ArgoCD", "Kubernetes"],
     },
-        {
+    {
       name: "DevSecOps",
-      items: ["Trivy SCA", "Semgrep SAST"],
+      items: ["Trivy (SCA)", "Semgrep (SAST)"],
     },
-    // {
-    //   name: "Etc.",
-    //   items: ["Figma", "Git", "Notion", "Jira", "Agile & Scrum"],
-    // },
   ],
   interesData: [
     {
       name: "Investing",
-      items: ["Crypto", "ETF"],
+      items: ["Cryptocurrency", "ETFs"],
     },
     {
       name: "Hobbies",
@@ -108,70 +82,71 @@ export default {
     {
       locationName: "AI & Robotics Ventures",
       link: "https://arv.co.th/en/",
-      time: "Oct 2022 - Oct 2026",
+      time: "Oct 2022 – Present",
       position: "Senior Fullstack Developer",
-      workDetail: "Develop and drive products across the company",
+      workDetail: "Own and drive products end to end across the company",
       highlights: [
-        "AI Engineering using modern skills and tools (superpowers, pi harness, hermes remote workflow)",
-        "Token optimization researhing for harness (RTK, context-mode, ponytail, etc.)",
-        "Domain champion for Authorization service and implement Casbin for RBAC + domain",
-        "Migrate security pipeline using Trivy for optimize cost from snyk",
-        "Implement PDF generation service performance with 1000+ pages in less time",
-        "Full loop Root cause analysis in micro-services and provide solutions",
-        "Develop the inpsection platform using micro-servvices in rust",
-        "Implement & maintain ui library for multiple repos",
-        "Develop a micro-frontend of datastorage product",
-        "Structure and archetechture of the frontend project",
-      ]
+        "Applied modern AI engineering workflows (Superpowers, Pi Harness, Hermes remote workflow) to accelerate day-to-day delivery",
+        "Researched context and token optimization techniques for agent harnesses (RTK, context-mode, Ponytail, etc.)",
+        "Acted as domain champion for the authorization service and implemented Casbin for domain-scoped RBAC",
+        "Migrated the security scanning pipeline to Trivy, reducing tooling cost previously spent on Snyk",
+        "Optimized the PDF generation service to render 1,000+ page documents in significantly less time",
+        "Performed full-loop root cause analysis across microservices and delivered corrective solutions",
+        "Built an inspection platform on Rust microservices",
+        "Implemented and maintained a shared UI library across multiple repositories",
+        "Developed a micro-frontend for the data storage product",
+        "Defined the structure and architecture of frontend projects",
+      ],
     },
     {
       locationName: "Perceptra",
       link: "https://www.perceptra.tech/",
-      time: "Sep 2021 - Sep 2022",
+      time: "Sep 2021 – Sep 2022",
       position: "Fullstack Developer",
-      workDetail: "Develop a web on-premise for hospitals",
+      workDetail: "Developed an on-premise web platform for hospitals",
       highlights: [
-        "Start ReactJS project from zero",
-        "Deploy services using docker-compose & nginx",
-        "Automate test by selenium",
-        "Microservices Design",
+        "Bootstrapped a ReactJS project from scratch",
+        "Deployed services using Docker Compose and Nginx",
+        "Automated end-to-end tests with Selenium",
+        "Designed the microservices architecture",
       ],
     },
     {
       locationName: "True-e Logistics",
       link: "https://www.linkedin.com/company/true-e-logistics/",
-      time: "Sep 2019 - Sep 2021",
+      time: "Sep 2019 – Sep 2021",
       position: "Fullstack Developer",
-      workDetail: "Develop a production project & Problem solving",
+      workDetail: "Delivered production systems and resolved issues across the platform",
       highlights: [
-        "Work as a team of 5-8 people (Dev, QA, PO, UX/UI, IT Support)",
-        "Logistic platform (Sendit, ANNY, CP-ALL)",
+        "Collaborated in a cross-functional team of 5–8 (Developers, QA, PO, UX/UI, IT Support)",
+        "Delivered logistics platforms (Sendit, ANNY, CP-ALL)",
       ],
     },
     {
       locationName: "Buzzfreeze Solutions Co., Ltd.",
       link: "http://buzzfreeze.com/web/",
-      time: "2018 - 2019",
+      time: "2018 – 2019",
       position: "Fullstack Developer",
       workDetail:
-        "Open the world of backend with NodeJS, Sequelize and Experience of React Hooks, React Native",
+        "Gained hands-on backend experience with NodeJS and Sequelize, and built interfaces with React Hooks and React Native",
       highlights: [
-        "Design & Develop a Stock Inventories Dashboard",
+        "Designed and developed a stock inventory dashboard",
         <>
-          BMW Sale steering{" "}
-          <a href="https://mybmwreward.com" target="_blank">
+          BMW Sales Steering -{" "}
+          <a href="https://mybmwreward.com" target="_blank" rel="noreferrer">
             User
           </a>
           {" & "}
-          <a href="https://mybmwreward.com" target="_blank">
+          <a href="https://mybmwreward.com" target="_blank" rel="noreferrer">
             Admin
           </a>
         </>,
         <>
-          LANEXANG Tourism{" "}
+          Lanexang Tourism -{" "}
           <a
             href="https://play.google.com/store/apps/details?id=com.lanxangapp&hl=en_US"
             target="_blank"
+            rel="noreferrer"
           >
             Android
           </a>
@@ -179,11 +154,12 @@ export default {
           <a
             href="https://apps.apple.com/ar/app/lanexang-tourism/id1448354702"
             target="_blank"
+            rel="noreferrer"
           >
-            IOS
+            iOS
           </a>
         </>,
-        "Develop Logistic Algorithm",
+        "Developed the logistics routing algorithm",
       ],
     },
   ],
@@ -191,19 +167,20 @@ export default {
     {
       locationName: "Silpakorn University",
       link: "https://ict.su.ac.th/",
-      time: "2014 - 2017",
-      position: "ICT Web & Interactive media Design",
+      time: "2014 – 2017",
+      position: "Information and Communication Technology - Web & Interactive Media Design",
       workDetail: "",
       highlights: [
-        "Second-class Honors GPA 3.39",
+        "Graduated with Second-Class Honours, GPA 3.39",
         <>
+          Final year project -{" "}
           <a
             href="http://ictsilpakorn.com/im12/comeraam/project_detail.php?id=13570110"
             target="_blank"
+            rel="noreferrer"
           >
-            Final Project
-          </a>{" "}
-          Design & Develop
+            view project
+          </a>
         </>,
       ],
     },
