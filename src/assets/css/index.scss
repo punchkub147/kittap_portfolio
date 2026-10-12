@@ -1,0 +1,13 @@
+// VARIABLES
+@import '_variables.scss';
+
+// UTILS
+@import 'bootstrap.min.scss';
+@import '_animate.scss';
+@import '_nprogress.scss';
+
+// GLOBAL
+@import '_animateClass.scss';
+@import '_global.scss';
+// PAGES
+@import 'home.scss';

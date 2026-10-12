@@ -1,0 +1,12 @@
+#HOME {
+  h1 {
+    color: $color-main;
+  }
+  
+  .container {
+    color: $color-sub;
+    .row {
+      color: red;
+    }
+  }
+}
