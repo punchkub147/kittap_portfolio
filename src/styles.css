@@ -2,3 +2,44 @@
   font-family: sans-serif;
   text-align: center;
 }
+
+/* ---- Print / "Export" (see the Print / Save as PDF button) ---- */
+@page {
+  size: A4;
+  margin: 12mm;
+}
+
+@media print {
+  html,
+  body {
+    background: #fff;
+  }
+
+  /* Chrome cannot embed the macOS system font (-apple-system → SF Pro, a
+     variable font) into a PDF: it falls back to Type3 path glyphs, which
+     Preview and other CoreGraphics viewers render washed out. A static font is
+     embedded as a real subset, so printed/exported text stays dark and crisp.
+     Specificity beats Bootstrap's `body` rule. */
+  html body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+
+  /* The container fades in on load (.page, see _global.scss). A print/PDF
+     snapshot can land mid-animation and dim the whole page to a few percent
+     opacity, so pin it to its finished state. The `html` prefix outranks the
+     .page rule regardless of stylesheet order. */
+  html .page {
+    animation: none;
+  }
+
+  /* Keep the shaded bars and tag chips visible on paper */
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}

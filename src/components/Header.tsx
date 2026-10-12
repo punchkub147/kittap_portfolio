@@ -9,6 +9,10 @@ const Header = styled.div`
   color: ${(props) => props.theme.color.textHeader};
   display: flex;
   justify-content: space-between;
+
+  @media print {
+    display: none;
+  }
 `;
 
 const Navbar = styled.ul`

@@ -14,6 +14,13 @@ const Background = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
+
+  @media print {
+    padding: 0;
+    background-image: none;
+    min-height: auto;
+    display: block;
+  }
 `;
 
 const Container = styled.div`
@@ -22,6 +29,12 @@ const Container = styled.div`
   padding: ${(props) => props.theme.space.default};
   box-shadow: ${(props) => props.theme.shadow[0]};
   border-radius: ${(props) => props.theme.border.radius};
+
+  @media print {
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+  }
 `;
 
 const Layout = (props: any) => {

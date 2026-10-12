@@ -26,7 +26,7 @@ export default {
       {
         icon: faFile,
         text: "Resume",
-        link: "https://github.com/punchkub147",
+        link: `${process.env.PUBLIC_URL}/kittapard-puaime-resume.pdf`,
       },
       {
         icon: faFileImage,
@@ -82,7 +82,7 @@ export default {
     {
       locationName: "AI & Robotics Ventures",
       link: "https://arv.co.th/en/",
-      time: "Oct 2022 – Present",
+      time: "Aug 2022 – Present",
       position: "Senior Fullstack Developer",
       workDetail: "Own and drive products end to end across the company",
       highlights: [
@@ -101,7 +101,7 @@ export default {
     {
       locationName: "Perceptra",
       link: "https://www.perceptra.tech/",
-      time: "Sep 2021 – Sep 2022",
+      time: "Aug 2021 – Jul 2022",
       position: "Fullstack Developer",
       workDetail: "Developed an on-premise web platform for hospitals",
       highlights: [
@@ -114,7 +114,7 @@ export default {
     {
       locationName: "True-e Logistics",
       link: "https://www.linkedin.com/company/true-e-logistics/",
-      time: "Sep 2019 – Sep 2021",
+      time: "Sep 2019 – Jul 2021",
       position: "Fullstack Developer",
       workDetail: "Delivered production systems and resolved issues across the platform",
       highlights: [

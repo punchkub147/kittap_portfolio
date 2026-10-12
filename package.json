@@ -30,6 +30,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "export:pdf": "react-scripts build && node scripts/export-pdf.mjs",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },

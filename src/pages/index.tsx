@@ -1,14 +1,7 @@
-import React, { Fragment, useRef } from "react";
-import styled from "styled-components";
+import React, { Fragment } from "react";
+import styled, { css } from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useStoreState } from "easy-peasy";
-import {
-  faPhone,
-  faTasks,
-  faUniversity,
-  faHeart,
-  faBriefcase,
-} from "@fortawesome/free-solid-svg-icons";
+import { faDownload, faPrint } from "@fortawesome/free-solid-svg-icons";
 import portfolio from "../portfolio";
 import ImageProfile from "../static/img/display.jpg";
 
@@ -22,6 +15,57 @@ const Portfolio = styled.div`
   display: grid;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
+
+  @media print {
+    grid-row-gap: 12px;
+  }
+`;
+
+const Toolbar = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+
+  @media print {
+    display: none;
+  }
+`;
+
+const buttonStyles = css`
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  font: inherit;
+  font-size: 14px;
+  color: #fff;
+  background-color: #333;
+  border: 1px solid #333;
+  border-radius: ${(props) => props.theme.border.radius};
+  cursor: pointer;
+
+  &:hover {
+    background-color: #111;
+  }
+
+  &:focus-visible {
+    outline: 2px solid #4a90d9;
+    outline-offset: 2px;
+  }
+`;
+
+const PrintButton = styled.button`
+  ${buttonStyles}
+`;
+
+const DownloadLink = styled.a`
+  ${buttonStyles}
+  color: #fff;
+  text-decoration: none;
+
+  &:hover {
+    color: #fff;
+  }
 `;
 
 const ProfileHeader = styled.div`
@@ -68,7 +112,19 @@ const WorkSection = styled.div`
   .highlight {
     border: 1px solid #ccc;
     padding: 5px;
+
+    @media print {
+      border-color: #999;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
   }
+`;
+
+/** Keeps a whole job / education entry on one printed page. */
+const WorkItem = styled.div`
+  break-inside: avoid;
+  page-break-inside: avoid;
 `;
 
 const Display = styled.div`
@@ -79,6 +135,10 @@ const Display = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 100px 100px 100px 100px;
+  }
+
+  @media print {
+    box-shadow: none;
   }
 `;
 
@@ -98,8 +158,26 @@ const Tag = styled.div`
 const PortFolioPaper = () => {
   const { profileData, skillsData, interesData, worksData, educationsData } =
     portfolio;
+
   return (
     <Portfolio>
+      <Toolbar>
+        <DownloadLink
+          href={`${process.env.PUBLIC_URL}/kittapard-puaime-resume.pdf`}
+          download="kittapard-puaime-resume.pdf"
+          title="Download the portfolio as PDF (no browser header or footer)"
+        >
+          <FontAwesomeIcon icon={faDownload} /> Download PDF
+        </DownloadLink>
+        <PrintButton
+          type="button"
+          onClick={() => window.print()}
+          title="Print this page — turn off 'Headers and footers' in the print dialog to drop the date, title and page numbers"
+          aria-label="Print this page"
+        >
+          <FontAwesomeIcon icon={faPrint} /> Print
+        </PrintButton>
+      </Toolbar>
       <ProfileHeader>
         <Display>
           <img src={ImageProfile} alt="display" />
@@ -122,9 +200,9 @@ const PortFolioPaper = () => {
           </h5>
           <WorkSection>
             {worksData.map((work) => (
-              <Fragment>
+              <WorkItem key={work.locationName}>
                 <div className="place">
-                  <a href={work.link} target="_blank">
+                  <a href={work.link} target="_blank" rel="noreferrer">
                     <b>{work.locationName}</b>
                   </a>
                   <p>{work.time}</p>
@@ -134,11 +212,13 @@ const PortFolioPaper = () => {
                     <b>{work.position}</b>
                   </p>
                   <p>{work.workDetail}</p>
-                  {work.highlights.map((highlight) => (
-                    <p className="highlight">{highlight}</p>
+                  {work.highlights.map((highlight, index) => (
+                    <p className="highlight" key={index}>
+                      {highlight}
+                    </p>
                   ))}
                 </div>
-              </Fragment>
+              </WorkItem>
             ))}
           </WorkSection>
           <h5>
@@ -146,9 +226,9 @@ const PortFolioPaper = () => {
           </h5>
           <WorkSection>
             {educationsData.map((work) => (
-              <Fragment>
+              <WorkItem key={work.locationName}>
                 <div className="place">
-                  <a href={work.link} target="_blank">
+                  <a href={work.link} target="_blank" rel="noreferrer">
                     <b>{work.locationName}</b>
                   </a>
                   <p>{work.time}</p>
@@ -158,11 +238,13 @@ const PortFolioPaper = () => {
                     <b>{work.position}</b>
                   </p>
                   <p>{work.workDetail}</p>
-                  {work.highlights.map((highlight) => (
-                    <p className="highlight">{highlight}</p>
+                  {work.highlights.map((highlight, index) => (
+                    <p className="highlight" key={index}>
+                      {highlight}
+                    </p>
                   ))}
                 </div>
-              </Fragment>
+              </WorkItem>
             ))}
           </WorkSection>
         </Profile>
@@ -172,13 +254,13 @@ const PortFolioPaper = () => {
               <i>SKILLS</i>
             </h5>
             {skillsData.map((skill) => (
-              <Fragment>
+              <Fragment key={skill.name}>
                 <p>
                   <b>{skill.name}</b>
                 </p>
                 <TagGroup>
                   {skill.items.map((item) => (
-                    <Tag>{item}</Tag>
+                    <Tag key={item}>{item}</Tag>
                   ))}
                 </TagGroup>
               </Fragment>
@@ -191,13 +273,13 @@ const PortFolioPaper = () => {
             </h5>
 
             {interesData.map((interest) => (
-              <Fragment>
+              <Fragment key={interest.name}>
                 <p>
                   <b>{interest.name}</b>
                 </p>
                 <TagGroup>
                   {interest.items.map((item) => (
-                    <Tag>{item}</Tag>
+                    <Tag key={item}>{item}</Tag>
                   ))}
                 </TagGroup>
               </Fragment>
@@ -208,12 +290,12 @@ const PortFolioPaper = () => {
               <i>CONTACT</i>
             </h5>
             {profileData.contract.map((item) => (
-              <div className="label">
+              <div className="label" key={item.text}>
                 <span className="icon">
                   <FontAwesomeIcon icon={item.icon} />
                 </span>
                 {item.link ? (
-                  <a href={item.link} target="_blank">
+                  <a href={item.link} target="_blank" rel="noreferrer">
                     <p>{item.text}</p>
                   </a>
                 ) : (
