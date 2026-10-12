@@ -1,21 +1,6 @@
 import Header from "../Header";
 import styled, { ThemeProvider } from "styled-components";
-
-const theme = {
-  color: {
-    main: "red",
-    background: "#eee",
-    container: "white",
-    textHeader: "white",
-  },
-  space: {
-    default: "20px",
-  },
-  border: {
-    radius: "15px",
-  },
-  shadow: ["box-shadow: 0px 6px 10px -4px rgba(135,135,135,0.55)"],
-};
+import { theme } from "../../theme";
 
 const Background = styled.div`
   padding: ${(props) => props.theme.space.default};
