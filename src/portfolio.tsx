@@ -49,52 +49,85 @@ export default {
   skillsData: [
     {
       name: "Frontend",
-      items: ["Typescript", "React&Redux", "Storybook", "Selenium"],
+      items: ["Typescript", "NextJS", "Tanstack", "Zod", "Jotai", "Playwright"],
+      // items: ["Typescript", "React&Redux", "Storybook", "Selenium"],
     },
-    {
-      name: "Frontend",
-      level: "Learning",
-      items: ["NextJS", "Testing Lib"],
-    },
-    {
-      name: "Backend",
-      items: [
-        "NodeJS",
-        "Koa",
-        "MySQL",
-        "Sequelize",
-        "Socket",
-        "Redis",
-        "Docker",
-        "Nginx",
-      ],
-    },
+    // {
+    //   name: "Frontend",
+    //   level: "Learning",
+    //   items: ["NextJS", "Testing Lib"],
+    // },
     {
       name: "Backend",
-      level: "Learning",
-      items: ["AWS (RDS, S3, ECR, EC2)"],
+      // items: [
+      //   "NodeJS",
+      //   "Koa",
+      //   "MySQL",
+      //   "Sequelize",
+      //   "Socket",
+      //   "Redis",
+      //   "Docker",
+      //   "Nginx",
+      // ],
+      items: ["Rust", "Axum", "Tokio", "sqlx", "Redis", "Kafka", "AWS (RDS, S3, ECR, ETC.)"],
     },
     {
-      name: "Etc.",
-      items: ["Figma", "Git", "Notion", "Jira", "Agile & Scrum"],
+      name: "AI Skills & Tools",
+      items: ["OMP (Pi Harness)", "Hermes agent", "Superpowers"],
     },
+    // {
+    //   name: "Backend",
+    //   level: "Learning",
+    //   items: ["AWS (RDS, S3, ECR, EC2)"],
+    // },
+    {
+      name: "DevOps",
+      items: ["Docker", "Gitlab CI/CD", "Terraform IaC", "ArgoCD", "K8S"],
+    },
+        {
+      name: "DevSecOps",
+      items: ["Trivy SCA", "Semgrep SAST"],
+    },
+    // {
+    //   name: "Etc.",
+    //   items: ["Figma", "Git", "Notion", "Jira", "Agile & Scrum"],
+    // },
   ],
   interesData: [
     {
       name: "Investing",
-      items: ["Crypto", "Stock Funding"],
+      items: ["Crypto", "ETF"],
     },
     {
       name: "Hobbies",
-      items: ["Mobile Games", "PC Games"],
+      items: ["PS5 Games", "Pets"],
     },
   ],
 
   worksData: [
     {
+      locationName: "AI & Robotics Ventures",
+      link: "https://arv.co.th/en/",
+      time: "Oct 2022 - Oct 2026",
+      position: "Senior Fullstack Developer",
+      workDetail: "Develop and drive products across the company",
+      highlights: [
+        "AI Engineering using modern skills and tools (superpowers, pi harness, hermes remote workflow)",
+        "Token optimization researhing for harness (RTK, context-mode, ponytail, etc.)",
+        "Domain champion for Authorization service and implement Casbin for RBAC + domain",
+        "Migrate security pipeline using Trivy for optimize cost from snyk",
+        "Implement PDF generation service performance with 1000+ pages in less time",
+        "Full loop Root cause analysis in micro-services and provide solutions",
+        "Develop the inpsection platform using micro-servvices in rust",
+        "Implement & maintain ui library for multiple repos",
+        "Develop a micro-frontend of datastorage product",
+        "Structure and archetechture of the frontend project",
+      ]
+    },
+    {
       locationName: "Perceptra",
       link: "https://www.perceptra.tech/",
-      time: "Sep 2021 - present",
+      time: "Sep 2021 - Sep 2022",
       position: "Fullstack Developer",
       workDetail: "Develop a web on-premise for hospitals",
       highlights: [
